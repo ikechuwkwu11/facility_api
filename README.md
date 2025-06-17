@@ -20,23 +20,30 @@ A robust and RESTful API built with Django and Django REST Framework (DRF) that 
 - Cancel/delete bookings
 
 ## 🧰 Tech Stack
-- Component	Technology
-- Backend	Python, Django
-- API Framework	Django REST Framework (DRF)
-- Authentication	Custom DRF serializers
-- Database	SQLite (default, swappable)
-- API Testing Tool	Postman, cURL, or HTTPie
+| Component      | Technology                    |
+| -------------- | ----------------------------- |
+| Backend        | Python, Django                |
+| API Framework  | Django REST Framework (DRF)   |
+| Authentication | Django Auth / DRF Serializers |
+| Database       | SQLite (easily swappable)     |
+| API Testing    | Postman, cURL, Insomnia       |
+
 
 ## 🧪 API Testing
-- Use Postman, Insomnia, or cURL to test endpoints. Typical endpoints may include:
-- POST /api/register/ – User registration
-- POST /api/login/ – User login
-- POST /api/logout/ – User logout
-- GET /api/facilities/ – List facilities
-- POST /api/facilities/ – Create facility
-- GET /api/bookings/ – List bookings
-- POST /api/bookings/ – Create booking
-- Authentication headers are required for protected routes.
+| Method | Endpoint                | Description                | Auth Required |
+| ------ | ----------------------- | -------------------------- | ------------- |
+| POST   | `/api/register/`        | Register a new user        | ❌             |
+| POST   | `/api/login/`           | User login                 | ❌             |
+| POST   | `/api/logout/`          | User logout                | ✅             |
+| GET    | `/api/facilities/`      | List all facilities        | ✅             |
+| POST   | `/api/facilities/`      | Create a new facility      | ✅             |
+| PUT    | `/api/facilities/<id>/` | Update facility details    | ✅             |
+| DELETE | `/api/facilities/<id>/` | Delete a facility          | ✅             |
+| GET    | `/api/bookings/`        | List all bookings          | ✅             |
+| POST   | `/api/bookings/`        | Create a booking           | ✅             |
+| PUT    | `/api/bookings/<id>/`   | Update an existing booking | ✅             |
+| DELETE | `/api/bookings/<id>/`   | Cancel/delete a booking    | ✅             |
+
 
 ## 🔐 Authentication
 This API uses custom serializers for user registration and login. You can implement session or token-based auth depending on your setup.
